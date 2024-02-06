@@ -30,8 +30,8 @@ fn main() {
     */
 
     //method return struct data type which is implemented
-    println!("from struct Search String = {:?}", parse_impl_struct.syntax);
-    println!("from struct Filename = {:?}", parse_impl_struct.filename);
+    //println!("from struct Search String = {:?}", parse_impl_struct.query);
+    //println!("from struct Filename = {:?}", parse_impl_struct.filename);
 
     //run(parse_impl_struct);
     
@@ -40,8 +40,6 @@ fn main() {
         println!("Application error {:?}",e);
         process::exit(1);
     } ;
-
-    println!("Hello, world!");
 }
 
 
@@ -62,7 +60,8 @@ fn parse_config_struct(args: &[String]) -> (config_command) {
     let query = args[1].clone();
     let filename = args[2].clone();
     return config_command {
-        syntax: query,
+        query: query,
+        case:"sensitive".to_string(),
         filename: filename,
     };
 }
